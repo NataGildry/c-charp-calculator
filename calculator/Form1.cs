@@ -72,17 +72,16 @@ namespace calculator
                             inputField.Text = "" + result;
                             break;
                         case '-':
-       
-                            // --- add logic --
+                            result = a - b;
+                            inputField.Text = "" + result;
                             break;
-
                         case '/':
-                            // --- add logic --
+                            result = a / b;
+                            inputField.Text = "" + result;
                             break;
-
                         case '*':
-                            // --- add logic --
-
+                            result = a * b;
+                            inputField.Text = "" + result;
                             break;
                         default:
                             break;
@@ -97,14 +96,15 @@ namespace calculator
             }
         }
 
-        // clear input
+        #region clear input
         private void clearAll_Click(object sender, EventArgs e)
         {
             inputField.Text = "";
             elements = 0;
         }
+        #endregion
 
-        // read operands
+        #region read operands
 
         private void signPlus_Click(object sender, EventArgs e)
         {
@@ -126,8 +126,9 @@ namespace calculator
             operate(sender);
         }
 
-        // read operands
+        #endregion
 
+        #region read numeric buttons
         private void button_0_Click(object sender, EventArgs e)
         {
             readBtn(sender);
@@ -177,11 +178,13 @@ namespace calculator
         {
             readBtn(sender);
         }
+        #endregion
 
-        // read equel
+        #region read eqaul
         private void signEquel_Click(object sender, EventArgs e)
         {
             calculate(sender);
         }
+        #endregion
     }
 }
